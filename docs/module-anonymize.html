@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SockBot Global</title>
+	<title>SockBot Module: anonymize</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -120,12 +120,12 @@ Default value is 50 with lower numbers being higher priority.</a>
 					
 
 
-	<h1 class="page-title">Global</h1>
+	<h1 class="page-title">Module: anonymize</h1>
 <section>
 
 <header>
     <h2>
-    
+    anonymize
     </h2>
     
 </header>
@@ -135,6 +135,8 @@ Default value is 50 with lower numbers being higher priority.</a>
     
 
     
+        
+            <div class="description">Anonymize module. Responsible for allowing anonymous users to "puppet" the bot, making it speak instead of them.</div>
         
 
         
@@ -189,14 +191,14 @@ Default value is 50 with lower numbers being higher priority.</a>
         <dl>
             
 <dt class="name" id="configuration">
-    <h4><span class="type-signature"></span>configuration<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Default Configuration settings for this sock_module
+        Configuration properties.
     </div>
     
 
@@ -206,114 +208,51 @@ Default value is 50 with lower numbers being higher priority.</a>
 <dl class="details">
 	
 
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
 	
 
-	
+        <tr>
+            
+                <td class="name"><code>enabled</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Whether to use anonymizer or not. Defaults to false.</td>
+        </tr>
 
 	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
+	</tbody>
+</table>
 </dl>
 
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="configuration">
-    <h4><span class="type-signature"></span>configuration<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Default Configuration settings for this sock_module
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="configuration Default Configuration settings for this
-sock_module">
-    <h4><span class="type-signature"></span>configuration Default Configuration settings for this
-sock_module<span class="type-signature"> :object</span></h4>
-
-    
-</dt>
-<dd>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">object</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
 	
 
 	
@@ -350,173 +289,14 @@ sock_module<span class="type-signature"> :object</span></h4>
         
             
 <dt class="name" id="description">
-    <h4><span class="type-signature"></span>description<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>description<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Brief description of this module for Help Docs
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="description">
-    <h4><span class="type-signature"></span>description<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Brief description of this module for Help Docs
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="description Brief description of this module for Help Docs">
-    <h4><span class="type-signature"></span>description Brief description of this module for Help Docs<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="name">
-    <h4><span class="type-signature"></span>name<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        The name of this sock_module
+        Description of the module
     </div>
     
 
@@ -560,126 +340,14 @@ sock_module<span class="type-signature"> :object</span></h4>
         
             
 <dt class="name" id="name">
-    <h4><span class="type-signature"></span>name<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>name<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        The name of this sock_module
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="name The name of this sock_module">
-    <h4><span class="type-signature"></span>name The name of this sock_module<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="priority">
-    <h4><span class="type-signature"></span>priority<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        If defined by a sock_module it is the priority
-of the module with respect to other modules.
-
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.
+        Name of the module
     </div>
     
 
@@ -723,134 +391,14 @@ Default value is 50 with lower numbers being higher priority.
         
             
 <dt class="name" id="priority">
-    <h4><span class="type-signature"></span>priority<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>priority<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        If defined by a sock_module it is the priority
-of the module with respect to other modules.
-
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="priority If defined by a sock_module it is the priority
-of the module with respect to other modules.
-
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.">
-    <h4><span class="type-signature"></span>priority If defined by a sock_module it is the priority
-of the module with respect to other modules.
-
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.<span class="type-signature"> :number</span></h4>
-
-    
-</dt>
-<dd>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">number</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="version">
-    <h4><span class="type-signature"></span>version<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        The version of this sock_module
+        Priority of the module
     </div>
     
 
@@ -894,74 +442,17 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
         
             
 <dt class="name" id="version">
-    <h4><span class="type-signature"></span>version<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>version<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        The version of this sock_module
+        Module version
     </div>
     
 
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="version The version of this sock_module">
-    <h4><span class="type-signature"></span>version The version of this sock_module<span class="type-signature"> :string</span></h4>
-
-    
-</dt>
-<dd>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
     
 
     
@@ -1008,7 +499,7 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
         <dl>
             
 <dt>
-    <h4 class="name" id="handleMessage"><span class="type-signature"></span>handleMessage<span class="signature">(message, post, callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="begin"><span class="type-signature">&lt;static> </span>begin<span class="signature">(browser, config)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -1016,7 +507,7 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
     
     
     <div class="description">
-        Handle a message
+        Bootstrap the module.
     </div>
     
 
@@ -1050,7 +541,7 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
 
         <tr>
             
-                <td class="name"><code>message</code></td>
+                <td class="name"><code>browser</code></td>
             
 
             <td class="type">
@@ -1066,20 +557,20 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
 
             
 
-            <td class="description last">The message to handle</td>
+            <td class="description last">The browser I guess?</td>
         </tr>
 
 	
 
         <tr>
             
-                <td class="name"><code>post</code></td>
+                <td class="name"><code>config</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -1089,31 +580,7 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
 
             
 
-            <td class="description last">Some sort of post</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The callback to call after the
- message has been handled</td>
+            <td class="description last">The config I guess?</td>
         </tr>
 
 	
@@ -1170,7 +637,7 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
         
             
 <dt>
-    <h4 class="name" id="uuid"><span class="type-signature"></span>uuid<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="onNotify"><span class="type-signature">&lt;static> </span>onNotify<span class="signature">(type, notification, topic, post, callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -1178,11 +645,9 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
     
     
     <div class="description">
-        Generate a type 4 UUID.
-I don't understand how this does what it does, but it works.
-It's a lot slower than using node-uuid but i only need one
-of these so its good enough
-Source: http://jsperf.com/node-uuid-performance/19
+        Runs on notification. If the anonymizer is not enabled or there's no quote, 
+it early aborts. Otherwise, it sends a post to the quote's topic containing 
+the text.
     </div>
     
 
@@ -1190,6 +655,147 @@ Source: http://jsperf.com/node-uuid-performance/19
     
     
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The type of event. Only responds if this is 'private_message'</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>notification</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The notification to respond to</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>topic</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Unused.</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>post</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The post the notification was for</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The callback to notify when processing is complete.</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
     
     
     
