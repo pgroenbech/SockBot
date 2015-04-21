@@ -577,332 +577,6 @@ sock_module<span class="type-signature"> :object</span></h4>
         
             
 <dt>
-    <h4 class="name" id="discoursePostAction"><span class="type-signature"></span>discoursePostAction<span class="type-signature"> :Number</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Known Post Actions
-    </div>
-    
-    
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Number</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-        
-        <h5 class="subsection-title">Properties:</h5>
-        
-        <dl>
-
-<table class="props">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-		
-		<th>Type</th>
-		
-		
-		
-		
-		<th>Default</th>
-		
-		
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-	
-	<tbody>
-	
-	
-        <tr>
-            
-                <td class="name"><code>bookmark</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-                <td class="default">
-                
-                    1
-                
-                </td>
-            
-            
-            <td class="description last"></td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>like</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-                <td class="default">
-                
-                    2
-                
-                </td>
-            
-            
-            <td class="description last"></td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>off_topic</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-                <td class="default">
-                
-                    3
-                
-                </td>
-            
-            
-            <td class="description last"></td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>inappropriate</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-                <td class="default">
-                
-                    4
-                
-                </td>
-            
-            
-            <td class="description last"></td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>vote</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-                <td class="default">
-                
-                    5
-                
-                </td>
-            
-            
-            <td class="description last"></td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>notify_user</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-                <td class="default">
-                
-                    6
-                
-                </td>
-            
-            
-            <td class="description last"></td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>notify_moderators</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-                <td class="default">
-                
-                    7
-                
-                </td>
-            
-            
-            <td class="description last"></td>
-        </tr>
-	
-	
-	
-        <tr>
-            
-                <td class="name"><code>spam</code></td>
-            
-            
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-            
-            
-            
-            
-                <td class="default">
-                
-                    8
-                
-                </td>
-            
-            
-            <td class="description last"></td>
-        </tr>
-	
-	
-	</tbody>
-</table></dl>
-        
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="discourse.js.html">discourse.js</a>, <a href="discourse.js.html#line69">line 69</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
-</dl>
-
-    
-    
-</dd>
-
-        
-            
-<dt>
     <h4 class="name" id="name The name of this sock_module"><span class="type-signature"></span>name The name of this sock_module<span class="type-signature"> :string</span></h4>
     
     
@@ -1415,6 +1089,65 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
         
             
 <dt>
+    <h4 class="name" id="uuid"><span class="type-signature"></span>uuid<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Generate a type 4 UUID.
+
+I don't understand how this does what it does, but it works.
+It's a lot slower than using node-uuid but i only need one
+of these so its good enough
+Source: http://jsperf.com/node-uuid-performance/19
+    </div>
+    
+    
+    
+
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="discourse.js.html">discourse.js</a>, <a href="discourse.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
     <h4 class="name" id="version The version of this sock_module"><span class="type-signature"></span>version The version of this sock_module<span class="type-signature"> :string</span></h4>
     
     
@@ -1840,7 +1573,7 @@ Default value is 50 with lower numbers being higher priority.<span class="type-s
 <nav>
     <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-anonymize.html">anonymize</a></li><li><a href="module-dice.html">dice</a></li><li><a href="module-discourse.html">discourse</a></li></ul><h3>Global</h3><ul><li><a href="global.html#configuration Default Configuration settings for this
 sock_module">configuration Default Configuration settings for this
-sock_module</a></li><li><a href="global.html#description Brief description of this module for Help Docs">description Brief description of this module for Help Docs</a></li><li><a href="global.html#discoursePostAction">discoursePostAction</a></li><li><a href="global.html#handleMessage">handleMessage</a></li><li><a href="global.html#name The name of this sock_module">name The name of this sock_module</a></li><li><a href="global.html#priority If defined by a sock_module it is the priority
+sock_module</a></li><li><a href="global.html#description Brief description of this module for Help Docs">description Brief description of this module for Help Docs</a></li><li><a href="global.html#handleMessage">handleMessage</a></li><li><a href="global.html#name The name of this sock_module">name The name of this sock_module</a></li><li><a href="global.html#priority If defined by a sock_module it is the priority
 of the module with respect to other modules.
 
 sock_modules **should not** define modules with negative permissions.
@@ -1856,13 +1589,13 @@ Default value is 50 with lower numbers being higher priority.">priority If defin
 the module with respect to other modules.
 
 sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.</a></li><li><a href="global.html#version The version of this sock_module">version The version of this sock_module</a></li></ul>
+Default value is 50 with lower numbers being higher priority.</a></li><li><a href="global.html#uuid">uuid</a></li><li><a href="global.html#version The version of this sock_module">version The version of this sock_module</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue Apr 21 2015 19:49:35 GMT-0000 (UTC)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue Apr 21 2015 19:50:31 GMT-0000 (UTC)
 </footer>
 
 <script> prettyPrint(); </script>
