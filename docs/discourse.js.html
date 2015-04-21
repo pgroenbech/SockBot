@@ -27,7 +27,7 @@
         <article>
             <pre class="prettyprint source"><code>/**
  * @module discourse
- * @class discourse
+ * @namespace discourse
  * @author Accalia
  * @license MIT
  * @overview Used for communicating to discourse and the web.
@@ -51,6 +51,7 @@
  * of these so its good enough
  * Source: http://jsperf.com/node-uuid-performance/19
  *
+ * @memberof discourse
  * @returns {String} A type 4 UUID
  */
 function uuid() {
@@ -113,6 +114,7 @@ var csrf,
  * Most actions that would create a post will fail with error 'Muted' if bot is
  * asleep
  *
+ * @memberof discourse
  * @param {Number} until Unix Timestamp representing time for the bot to unmute
  * @returns {Number} current timestamp the bot is set to sleep until
  */
@@ -126,6 +128,7 @@ exports.sleep = function sleep(until) {
 /**
  * Get the current version information
  *
+ * @memberof discourse
  * @returns {Version} Active Version module
  */
 exports.version = function () {
@@ -136,6 +139,7 @@ exports.version = function () {
 /**
  * Log a message to the console
  *
+ * @memberof discourse
  * @param {*} message Message to log
  */
 exports.log = function log(message) {
@@ -145,6 +149,7 @@ exports.log = function log(message) {
 /**
  * Log a warning to the console
  *
+ * @memberof discourse
  * @param {*} message Warning to log
  */
 exports.warn = function warn(message) {
@@ -154,6 +159,7 @@ exports.warn = function warn(message) {
 /**
  * Log an error to the console
  *
+ * @memberof discourse
  * @param {*} message Error to log
  */
 exports.error = function error(message) {
@@ -164,6 +170,7 @@ exports.error = function error(message) {
 /**
  * Schedule a GET request to discourse
  *
+ * @memberof discourse
  * @param {String} url Site relative URL to fetch
  * @param {discourse~request} callback Response callback
  * @param {Number} [delayAfter=0] Apply this rate limiting to requests
@@ -178,6 +185,7 @@ exports.getForm = dGet;
 /**
  * Schedule a POST request to discourse
  *
+ * @memberof discourse
  * @param {String} url Site relative URL to post to
  * @param {Object} form Form to post
  * @param {discourse~request} callback Response callback
@@ -195,6 +203,7 @@ exports.postForm = dPost;
 /**
  * Schedule a POST request to discourse
  *
+ * @memberof discourse
  * @private
  * @param {String} url Site relative URL to post to
  * @param {Object} form Form to post
@@ -212,6 +221,7 @@ function dPut(url, form, callback, delayAfter) {
 /**
  * Schedule a DELETE request to discourse
  *
+ * @memberof discourse
  * @private
  * @param {String} url Site relative URL to post to
  * @param {Object} form Form to post
@@ -229,6 +239,7 @@ function dDelete(url, form, callback, delayAfter) {
 /**
  * Issue a GET request and save result to filesystem
  *
+ * @memberof discourse
  * @private
  * @param {String} url Url to fetch
  * @param {String} filename Filename to save to
@@ -247,6 +258,7 @@ exports.saveFile = function saveFile(url, filename, callback) {
  * if `timestamp` configuration setting is truthy add UTC time, else
  * return message unaltered
  *
+ * @memberof discourse
  * @private
  * @param {*} message Message to timestamp
  * @returns {String} timestamped input message
@@ -275,6 +287,7 @@ function addTimestamp(message) {
  *
  * add `url` and `reply_to` keys to the post
  *
+ * @memberof discourse
  * @private
  * @param {Post} post Discourse Post Object
  * @returns {CleanedPost} Cleaned Discourse Post Object
@@ -311,6 +324,7 @@ function cleanPost(post) {
  * if `delayGroup` is provided will schedule such that tasks with the same value
  * for `delayGroup` will be executed at most once per `delayGroup` milliseconds
  *
+ * @memberof discourse
  * @private
  * @param {Function} task Task to schedule
  * @param {Number} [delayGroup] Ensure task is rate limited to this rate
@@ -340,6 +354,7 @@ function schedule(task, delaygroup) {
 /**
  * Create a handler for HTTP requests
  *
+ * @memberof discourse
  * @private
  * @param {discourse~request} callback Handler that should handle
  * @returns {discourse~request} Handler that processes response then hands
@@ -705,13 +720,13 @@ exports.getUserData = function getUserData(username, callback) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Global</h3><ul><li><a href="global.html#addTimestamp">addTimestamp</a></li><li><a href="global.html#cleanPost">cleanPost</a></li><li><a href="global.html#dDelete">dDelete</a></li><li><a href="global.html#dGet">dGet</a></li><li><a href="global.html#dPost">dPost</a></li><li><a href="global.html#dPut">dPut</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#handleMessage">handleMessage</a></li><li><a href="global.html#handleResponse">handleResponse</a></li><li><a href="global.html#log">log</a></li><li><a href="global.html#saveFile">saveFile</a></li><li><a href="global.html#schedule">schedule</a></li><li><a href="global.html#sleep">sleep</a></li><li><a href="global.html#uuid">uuid</a></li><li><a href="global.html#version">version</a></li><li><a href="global.html#warn">warn</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Global</h3><ul><li><a href="global.html#handleMessage">handleMessage</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue Apr 21 2015 16:52:25 GMT-0000 (UTC)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue Apr 21 2015 16:58:16 GMT-0000 (UTC)
 </footer>
 
 <script> prettyPrint(); </script>
