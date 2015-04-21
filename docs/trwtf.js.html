@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: sock_modules/trwtf.js</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Source: sock_modules/trwtf.js</h1>
+    
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>/*jslint node: true, indent: 4 */
+/*eslint max-statements:0 */
+(function () {
+    'use strict';
+    var discourse,
+        summons = {},
+        configuration;
+
+    /**
+     * @var {string} description Brief description of this module for Help Docs
+     */
+    exports.description =
+        'Allow Summoning of bot to play in certain threads';
+
+    /**
+     * @var {object} configuration Default Configuration settings for this
+     * sock_module
+     */
+    exports.configuration = {
+        enabled: false,
+        autoTimeout: 60 * 1000,
+        userTimeout: 60 * 60 * 1000,
+        probability: 1,
+        message: '`username` is TRWTF'
+    };
+
+    /**
+     * @var {string} name The name of this sock_module
+     */
+    exports.name = 'TRWTF';
+
+    /**
+     * @var {number} priority If defined by a sock_module it is the priority
+     * of the module with respect to other modules.
+     *
+     * sock_modules **should not** define modules with negative permissions.
+     * Default value is 50 with lower numbers being higher priority.
+     */
+    exports.priority = 1000;
+
+    /**
+     * @var {string} version The version of this sock_module
+     */
+    exports.version = '0.9.5';
+
+    function purgeMemory() {
+        var lastHour = (new Date().getTime()) - 60 * 60 * 1000, // an hour ago;
+            k; //key
+        for (k in summons) {
+            if (summons.hasOwnProperty(k) && summons[k] &lt; lastHour) {
+                delete summons[k];
+            }
+        }
+    }
+    var replyOptions = {
+        amirite: false,
+        newb: false,
+        bold: false,
+        ahref: null
+    };
+
+    function checkForMentionInReply(replyText) {
+        var mention = /\@trwtfbot.*/g;
+        var found = replyText.match(mention);
+        if (found != null) {
+            discourse.log('[sloosecannon.trwtfbot.checkForMentionInReply]' +
+                'Found @mention in reply, activating TRWTFbot module'
+            );
+            return true;
+        } else {
+            discourse.log('[sloosecannon.trwtfbot.checkForMentionInReply]' +
+                'No @mentions, ignoring reply.'
+            );
+            discourse.log('[sloosecannon.trwtfbot.checkForMentionInReply]' +
+                'Reply text was: ' + replyText);
+            return false;
+        }
+    }
+
+    function processOptions(postRaw) {
+        //First, process and remove hrefs...
+        var hrefRegex = /(-ah) .* ?/g;
+        var hrefCommand = postRaw.match(hrefRegex);
+        replyOptions.ahref = (hrefCommand + '').replace(/(-ah) /g, '');
+        //remove href
+        postRaw = postRaw.replace(hrefRegex, '');
+
+        //next, process any remaining commands...
+        var commandStringRegex = /(-[nba]+)/g;
+        var commandString = postRaw.match(commandStringRegex);
+        if (commandString != null) {
+            commandString = commandString + '';
+            replyOptions.amirite = (commandString.search(/a/g) !== -1);
+            replyOptions.newb = (commandString.search(/n/g) !== -1);
+            replyOptions.bold = (commandString.search(/b/g) !== -1);
+        }
+        discourse.log('[sloosecannon.trwtfbot.processOptions]' +
+            'Options processing complete... Options were: '
+        );
+        discourse.log('[sloosecannon.trwtfbot.processOptions]' +
+            'amirite: ' + replyOptions.amirite);
+        discourse.log('[sloosecannon.trwtfbot.processOptions]' +
+            'newbmode: ' + replyOptions.newb);
+        discourse.log('[sloosecannon.trwtfbot.processOptions]' +
+            'bold: ' + replyOptions.bold);
+        discourse.log('[sloosecannon.trwtfbot.processOptions]' +
+            'ahref: ' + replyOptions.ahref);
+    }
+
+    exports.onNotify = function onNotify(type, notification, topic,
+        post, callback) {
+        var customOptions = false;
+        discourse.log(type, notification.slug);
+        if (type === 'mentioned' || ((post + '' !== 'null') && (post.raw +
+                '' !== 'null') && (checkForMentionInReply(post.raw)))) {
+            var now = (new Date().getTime()),
+                s = configuration.message;
+            if (summons[notification.topic_id] &&
+                now &lt; summons[notification.topic_id]) {
+                return callback();
+            }
+            discourse.log('[sloosecannon.trwtfbot.onNotify]' +
+                notification.data.display_username +
+                ' summoned me to play in ' + notification.slug);
+            s = s.replace(/%__(\w+)__%/g, function (m, key) {
+                if (post.hasOwnProperty(key)) {
+                    return post[key];
+                }
+                return m;
+            });
+            var search = /\@trwtfbot.*/g;
+            var username = post.raw.match(search);
+            discourse.log('[sloosecannon.trwtfbot.onNotify]' +
+                'Found ' + username);
+
+            if (username != null) {
+                username = username + '';
+                username = username.replace(/\@trwtfbot /g, '');
+                username = username + '';
+                discourse.log('[sloosecannon.trwtfbot.onNotify]' +
+                    'Username is ' + username);
+            } else {
+                username = 'YOU';
+                s = s.replace(/ is /g, ' are ');
+            }
+            if (username.search(/(-[nba]+)/g) !== -1 || username.search(
+                    /(-ah) .* ?/g) !== -1) {
+                customOptions = true;
+                discourse.log('[sloosecannon.trwtfbot.onNotify]' +
+                    'Found optional parameters, processing'
+                );
+                processOptions(post.raw);
+                username = username.replace(/(-ah) .* ?/g, '') + '';
+                username = (username.replace(/(-[nba]+)/g, '') + '');
+            }
+            if (customOptions === true) {
+                if (replyOptions.amirite) {
+                    s = s + ', amirite?';
+                }
+                if (replyOptions.newb) {
+                    s = s.replace(/TRWTF/g,
+                        '&lt;abbr title="The Real WTF">TRWTF&lt;/abbr>'
+                    );
+                }
+                if (replyOptions.bold) {
+                    username = '&lt;strong>' + username + '&lt;/strong>';
+                }
+                if (replyOptions.ahref + '' !== 'null') {
+                    username = '&lt;a href="' + replyOptions.ahref +
+                        '" class="mention">' + username + '&lt;/a>';
+                }
+                discourse.log('[sloosecannon.trwtfbot.onNotify]' +
+                    'After custom options, username is: ' + username
+                );
+            }
+            s = s.replace(/`username`/g, username);
+
+            summons[notification.topic_id] = now + configuration.autoTimeout;
+            discourse.createPost(notification.topic_id,
+                notification.post_number, s,
+                function () {
+                    callback(true);
+                });
+        } else {
+            callback();
+        }
+    };
+    exports.begin = function begin(browser, config) {
+        configuration = config.modules[exports.name];
+        discourse = browser;
+        setInterval(purgeMemory, 30 * 60 * 1000);
+    };
+}());
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-anonymize.html">anonymize</a></li><li><a href="module-dice.html">dice</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addTimestamp">addTimestamp</a></li><li><a href="global.html#button">button</a></li><li><a href="global.html#cleanPost">cleanPost</a></li><li><a href="global.html#configuration Default Configuration settings for this
+sock_module">configuration Default Configuration settings for this
+sock_module</a></li><li><a href="global.html#dDelete">dDelete</a></li><li><a href="global.html#description Brief description of this module for Help Docs">description Brief description of this module for Help Docs</a></li><li><a href="global.html#dGet">dGet</a></li><li><a href="global.html#dPost">dPost</a></li><li><a href="global.html#dPut">dPut</a></li><li><a href="global.html#error">error</a></li><li><a href="global.html#handleMessage">handleMessage</a></li><li><a href="global.html#handleResponse">handleResponse</a></li><li><a href="global.html#log">log</a></li><li><a href="global.html#name The name of this sock_module">name The name of this sock_module</a></li><li><a href="global.html#priority If defined by a sock_module it is the priority
+of the module with respect to other modules.
+
+sock_modules **should not** define modules with negative permissions.
+Default value is 50 with lower numbers being higher priority.">priority If defined by a sock_module it is the priority
+of the module with respect to other modules.
+
+sock_modules **should not** define modules with negative permissions.
+Default value is 50 with lower numbers being higher priority.</a></li><li><a href="global.html#priority If defined by a sock_module it is the priority of
+the module with respect to other modules.
+
+sock_modules **should not** define modules with negative permissions.
+Default value is 50 with lower numbers being higher priority.">priority If defined by a sock_module it is the priority of
+the module with respect to other modules.
+
+sock_modules **should not** define modules with negative permissions.
+Default value is 50 with lower numbers being higher priority.</a></li><li><a href="global.html#saveFile">saveFile</a></li><li><a href="global.html#schedule">schedule</a></li><li><a href="global.html#sleep">sleep</a></li><li><a href="global.html#unbutton">unbutton</a></li><li><a href="global.html#version">version</a></li><li><a href="global.html#version The version of this sock_module">version The version of this sock_module</a></li><li><a href="global.html#warn">warn</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Tue Apr 21 2015 17:31:22 GMT-0000 (UTC)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
