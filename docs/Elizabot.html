@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SockBot Global</title>
+	<title>SockBot Module: Elizabot</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -122,12 +122,12 @@
 					
 
 
-	<h1 class="page-title">Global</h1>
+	<h1 class="page-title">Module: Elizabot</h1>
 <section>
 
 <header>
     <h2>
-    
+    Elizabot
     </h2>
     
 </header>
@@ -138,6 +138,51 @@
 
     
         
+            <div class="description">elizabot.js v.1.1 - ELIZA JS library (N.Landsteiner 2005)
+  Eliza is a mock Rogerian psychotherapist.
+  Original program by Joseph Weizenbaum in MAD-SLIP for "Project MAC" at MIT.
+  cf: Weizenbaum, Joseph "ELIZA - A Computer Program For the Study of Natural Language
+      Communication Between Man and Machine"
+      in: Communications of the ACM; Volume 9 , Issue 1 (January 1966): p 36-45.
+  JavaScript implementation by Norbert Landsteiner 2005; <http://www.masserk.at>
+
+  synopsis:
+
+         new ElizaBot( <random-choice-disable-flag> )
+         ElizaBot.prototype.transform( <inputstring> )
+         ElizaBot.prototype.getInitial()
+         ElizaBot.prototype.getFinal()
+         ElizaBot.prototype.reset()
+
+  usage: var eliza = new ElizaBot();
+         var initial = eliza.getInitial();
+         var reply = eliza.transform(inputstring);
+         if (eliza.quit) {
+             // last user input was a quit phrase
+         }
+
+         // method `transform()' returns a final phrase in case of a quit phrase
+         // but you can also get a final phrase with:
+         var final = eliza.getFinal();
+
+         // other methods: reset memory and internal state
+         eliza.reset();
+
+         // to set the internal memory size override property `memSize':
+         eliza.memSize = 100; // (default: 20)
+
+         // to reproduce the example conversation given by J. Weizenbaum
+         // initialize with the optional random-choice-disable flag
+         var originalEliza = new ElizaBot(true);
+
+  `ElizaBot' is also a general chatbot engine that can be supplied with any rule set.
+  (for required data structures cf. "elizadata.js" and/or see the documentation.)
+  data is parsed and transformed for internal use at the creation time of the
+  first instance of the `ElizaBot' constructor.
+
+  vers 1.1: lambda functions in RegExps are currently a problem with too many browsers.
+            changed code to work around.</div>
+        
 
         
 <dl class="details">
@@ -185,269 +230,6 @@
 
     
 
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<dt class="name" id="configuration">
-    <h4><span class="type-signature"></span>configuration<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Default Configuration settings for this sock_module
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="description">
-    <h4><span class="type-signature"></span>description<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Brief description of this module for Help Docs
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="name">
-    <h4><span class="type-signature"></span>name<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        The name of this sock_module
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="priority">
-    <h4><span class="type-signature"></span>priority<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        If defined by a sock_module it is the priority
-of the module with respect to other modules.
-
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="version">
-    <h4><span class="type-signature"></span>version<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        The version of this sock_module
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -470,7 +252,7 @@ Default value is 50 with lower numbers being higher priority.
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Wednesday, April 22nd 2015, 5:09:32 pm using the <a
+		on Wednesday, April 22nd 2015, 5:09:33 pm using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>

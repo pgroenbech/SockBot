@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SockBot Module: sumon</title>
+	<title>SockBot Module: messageBus</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -122,12 +122,12 @@
 					
 
 
-	<h1 class="page-title">Module: sumon</h1>
+	<h1 class="page-title">Module: messageBus</h1>
 <section>
 
 <header>
     <h2>
-    sumon
+    messageBus
     </h2>
     
 </header>
@@ -138,7 +138,7 @@
 
     
         
-            <div class="description">Sumon module. Summons the bot.</div>
+            <div class="description">Used for dealing with long poll notifications from discourse.</div>
         
 
         
@@ -154,9 +154,23 @@
 	
 
 	
+	<dt class="tag-author">Author:</dt>
+	<dd class="tag-author">
+		<ul>
+			<li>Accalia</li>
+			</ul>
+	</dd>
+	
 
 	
 
+	
+	<dt class="tag-license">License:</dt>
+	<dd class="tag-license">
+		<ul class="dummy">
+			<li>MIT</li>
+		</ul>
+	</dd>
 	
 
 	
@@ -187,279 +201,6 @@
 
     
 
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<dt class="name" id="configuration">
-    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"> :Object</span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Default Configuration settings for this sock_module
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Object</span>
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="description">
-    <h4><span class="type-signature">&lt;static> </span>description<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Brief description of this module for Help Docs
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="name">
-    <h4><span class="type-signature">&lt;static> </span>name<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        The name of this sock_module
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="priority">
-    <h4><span class="type-signature">&lt;static> </span>priority<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        If defined by a sock_module it is the priority
-of the module with respect to other modules.
-
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="version">
-    <h4><span class="type-signature">&lt;static> </span>version<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        The version of this sock_module
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -468,7 +209,7 @@ Default value is 50 with lower numbers being higher priority.
         <dl>
             
 <dt>
-    <h4 class="name" id="begin"><span class="type-signature">&lt;static> </span>begin<span class="signature">(browser, config)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="handleMessage"><span class="type-signature">&lt;inner> </span>handleMessage<span class="signature">(message, post, callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -476,7 +217,7 @@ Default value is 50 with lower numbers being higher priority.
     
     
     <div class="description">
-        Bootstrap the module
+        Handle a message
     </div>
     
 
@@ -510,7 +251,7 @@ Default value is 50 with lower numbers being higher priority.
 
         <tr>
             
-                <td class="name"><code>browser</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
@@ -526,192 +267,7 @@ Default value is 50 with lower numbers being higher priority.
 
             
 
-            <td class="description last">discourse.</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>config</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The configuration to use</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="onNotify"><span class="type-signature">&lt;static> </span>onNotify<span class="signature">(type, notification, topic, post, callback)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Runs on notification. Uses a random chance of appearing to determine if it should appear or not, 
-controlled by the module configuration.
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The type of event. Only responds if this is 'mentioned'</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>notification</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The notification to respond to</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>topic</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Unused.</td>
+            <td class="description last">The message to handle</td>
         </tr>
 
 	
@@ -734,7 +290,7 @@ controlled by the module configuration.
 
             
 
-            <td class="description last">The post the notification was for</td>
+            <td class="description last">Some sort of post</td>
         </tr>
 
 	
@@ -757,7 +313,8 @@ controlled by the module configuration.
 
             
 
-            <td class="description last">The callback to notify when processing is complete.</td>
+            <td class="description last">The callback to call after the
+ message has been handled</td>
         </tr>
 
 	
