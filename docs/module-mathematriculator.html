@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SockBot Module: markov</title>
+	<title>SockBot Module: mathematriculator</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -114,12 +114,12 @@
 					
 
 
-	<h1 class="page-title">Module: markov</h1>
+	<h1 class="page-title">Module: mathematriculator</h1>
 <section>
 
 <header>
     <h2>
-    markov
+    mathematriculator
     </h2>
     
 </header>
@@ -130,7 +130,7 @@
 
     
         
-            <div class="description">Markov Chain module. Responsible for automatically replying to summons and replies by using a Markov chain to generate content</div>
+            <div class="description">Mathematriculator module. Responsible for automatically performing mathematical operations and unit conversions</div>
         
 
         
@@ -240,24 +240,6 @@
             
 
             <td class="description last">Whether to use Markov or not. Defaults to false.</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>corpus</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The location of the corpus file to use; must be a plan text file. Defaults to markov/corpus.txt; note that this file is part of the GitHub repo, and is liable to be replaced if you pull changes.</td>
         </tr>
 
 	
@@ -402,57 +384,6 @@
 
         
             
-<dt class="name" id="priority">
-    <h4><span class="type-signature">&lt;static> </span>priority<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Priority of the module
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
 <dt class="name" id="version">
     <h4><span class="type-signature">&lt;static> </span>version<span class="type-signature"></span></h4>
 
@@ -511,7 +442,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="begin"><span class="type-signature">&lt;static> </span>begin<span class="signature">(browser, config)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="begin"><span class="type-signature">&lt;static> </span>begin<span class="signature">(config)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -549,29 +480,6 @@
 	</thead>
 
 	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>browser</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The Discourse interface object</td>
-        </tr>
-
 	
 
         <tr>
@@ -649,7 +557,7 @@
         
             
 <dt>
-    <h4 class="name" id="onNotify"><span class="type-signature">&lt;static> </span>onNotify<span class="signature">(type, notification, topic, post, callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="onCommand"><span class="type-signature">&lt;static> </span>onCommand<span class="signature">(command, args, callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -657,7 +565,7 @@
     
     
     <div class="description">
-        Handle received notifications.
+        Respond to commands.
     </div>
     
 
@@ -691,13 +599,13 @@
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>command</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">string</span>
 
 
             
@@ -707,20 +615,20 @@
 
             
 
-            <td class="description last">The type of notification received</td>
+            <td class="description last">The command issued</td>
         </tr>
 
 	
 
         <tr>
             
-                <td class="name"><code>notification</code></td>
+                <td class="name"><code>args</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">array</span>
 
 
             
@@ -730,53 +638,7 @@
 
             
 
-            <td class="description last">An object representing the notification that was received</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>topic</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An object representing the topic that the notification was about</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>post</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An object representing the post that the notification was about</td>
+            <td class="description last">A list of arguments for the command</td>
         </tr>
 
 	
@@ -856,7 +718,7 @@
         
             
 <dt>
-    <h4 class="name" id="loadCorpus"><span class="type-signature">&lt;inner> </span>loadCorpus<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="calc"><span class="type-signature">&lt;inner> </span>calc<span class="signature">(args, callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -864,162 +726,7 @@
     
     
     <div class="description">
-        Load the corpus to use.
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="markovPost"><span class="type-signature">&lt;inner> </span>markovPost<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Generate post content using the Markov chain.
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    The post content
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">string</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="randomIntFromInterval"><span class="type-signature">&lt;inner> </span>randomIntFromInterval<span class="signature">(min, max)</span><span class="type-signature"> &rarr; {number}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Generate a random number in the specified range.
+        Bootstrap the module.
     </div>
     
 
@@ -1053,13 +760,13 @@
 
         <tr>
             
-                <td class="name"><code>min</code></td>
+                <td class="name"><code>args</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">array</span>
 
 
             
@@ -1069,20 +776,20 @@
 
             
 
-            <td class="description last">The lower bound of the range</td>
+            <td class="description last">A list of arguments to combine into an evaluateable expression</td>
         </tr>
 
 	
 
         <tr>
             
-                <td class="name"><code>max</code></td>
+                <td class="name"><code>callback</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">function</span>
 
 
             
@@ -1092,7 +799,7 @@
 
             
 
-            <td class="description last">The upper bound of the range</td>
+            <td class="description last">The callback to use once the action is complete</td>
         </tr>
 
 	
@@ -1142,29 +849,6 @@
     
     
     
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    The generated number
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">number</span>
-
-
-	</dd>
-</dl>
-
-
-        
     
     
 </dd>
