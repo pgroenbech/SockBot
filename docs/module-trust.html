@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SockBot Module: markov</title>
+	<title>SockBot Module: trust</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -118,12 +118,12 @@
 					
 
 
-	<h1 class="page-title">Module: markov</h1>
+	<h1 class="page-title">Module: trust</h1>
 <section>
 
 <header>
     <h2>
-    markov
+    trust
     </h2>
     
 </header>
@@ -134,7 +134,7 @@
 
     
         
-            <div class="description">Markov Chain module. Responsible for automatically replying to summons and replies by using a Markov chain to generate content</div>
+            <div class="description">Trust level report generation module</div>
         
 
         
@@ -189,86 +189,31 @@
         <dl>
             
 <dt class="name" id="configuration">
-    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"> :Object</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Configuration properties.
+        Configuration options
     </div>
     
 
     
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
 
     
 <dl class="details">
-	
-
-	<h5 class="subsection-title">Properties:</h5>
-
-	<dl>
-
-<table class="props table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>enabled</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Whether to use Markov or not. Defaults to false.</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>corpus</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The location of the corpus file to use; must be a plan text file. Defaults to markov/corpus.txt; note that this file is part of the GitHub repo, and is liable to be replaced if you pull changes.</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-</dl>
-
 	
 
 	
@@ -305,17 +250,27 @@
         
             
 <dt class="name" id="description">
-    <h4><span class="type-signature">&lt;static> </span>description<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>description<span class="type-signature"> :String</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Description of the module
+        Description of the module, for help text
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -356,68 +311,27 @@
         
             
 <dt class="name" id="name">
-    <h4><span class="type-signature">&lt;static> </span>name<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>name<span class="type-signature"> :String</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Name of the module
+        The name of the sockbot module
     </div>
     
 
     
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
 
 
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="priority">
-    <h4><span class="type-signature">&lt;static> </span>priority<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Priority of the module
-    </div>
-    
-
+            </li>
+        </ul>
     
 
     
@@ -458,17 +372,88 @@
         
             
 <dt class="name" id="version">
-    <h4><span class="type-signature">&lt;static> </span>version<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>version<span class="type-signature"> :String</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Module version
+        The version of this sockbot module
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="promotionTable">
+    <h4><span class="type-signature">&lt;inner> </span>promotionTable<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        List of description text for a given promotion table
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -523,7 +508,7 @@
     
     
     <div class="description">
-        Bootstrap the module.
+        Bootstrap the module
     </div>
     
 
@@ -563,7 +548,7 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">string</span>
 
 
             
@@ -573,7 +558,7 @@
 
             
 
-            <td class="description last">The Discourse interface object</td>
+            <td class="description last">discourse.</td>
         </tr>
 
 	
@@ -596,7 +581,7 @@
 
             
 
-            <td class="description last">The SockBot config object</td>
+            <td class="description last">The configuration to use</td>
         </tr>
 
 	
@@ -661,7 +646,8 @@
     
     
     <div class="description">
-        Handle received notifications.
+        Runs on notification. Only responds to private_message, mention, or reply.
+This also only replies to requests for your own report unless you're TL4 or higher.
     </div>
     
 
@@ -701,7 +687,7 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">string</span>
 
 
             
@@ -711,7 +697,7 @@
 
             
 
-            <td class="description last">The type of notification received</td>
+            <td class="description last">The type of event.</td>
         </tr>
 
 	
@@ -724,7 +710,7 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">string</span>
 
 
             
@@ -734,7 +720,7 @@
 
             
 
-            <td class="description last">An object representing the notification that was received</td>
+            <td class="description last">The notification to respond to</td>
         </tr>
 
 	
@@ -747,7 +733,7 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">string</span>
 
 
             
@@ -757,7 +743,7 @@
 
             
 
-            <td class="description last">An object representing the topic that the notification was about</td>
+            <td class="description last">Unused.</td>
         </tr>
 
 	
@@ -770,7 +756,7 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">string</span>
 
 
             
@@ -780,7 +766,7 @@
 
             
 
-            <td class="description last">An object representing the post that the notification was about</td>
+            <td class="description last">The post the notification was for</td>
         </tr>
 
 	
@@ -803,7 +789,7 @@
 
             
 
-            <td class="description last">The callback to use once the action is complete</td>
+            <td class="description last">The callback to notify when processing is complete.</td>
         </tr>
 
 	
@@ -860,7 +846,7 @@
         
             
 <dt>
-    <h4 class="name" id="loadCorpus"><span class="type-signature">&lt;inner> </span>loadCorpus<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="formatReport"><span class="type-signature">&lt;inner> </span>formatReport<span class="signature">(user)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
     
 </dt>
@@ -868,162 +854,7 @@
     
     
     <div class="description">
-        Load the corpus to use.
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="markovPost"><span class="type-signature">&lt;inner> </span>markovPost<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Generate post content using the Markov chain.
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    The post content
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">string</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="randomIntFromInterval"><span class="type-signature">&lt;inner> </span>randomIntFromInterval<span class="signature">(min, max)</span><span class="type-signature"> &rarr; {number}</span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Generate a random number in the specified range.
+        Format the report to send out.
     </div>
     
 
@@ -1057,13 +888,13 @@
 
         <tr>
             
-                <td class="name"><code>min</code></td>
+                <td class="name"><code>user</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">Object</span>
 
 
             
@@ -1073,30 +904,7 @@
 
             
 
-            <td class="description last">The lower bound of the range</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>max</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The upper bound of the range</td>
+            <td class="description last">The user whose report this is for</td>
         </tr>
 
 	
@@ -1150,7 +958,7 @@
     
             
 <div class="param-desc">
-    The generated number
+    The report text, formatted pretty
 </div>
 
 
@@ -1161,7 +969,283 @@
 	</dt>
 	<dd>
 		
-<span class="param-type">number</span>
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getReportBase"><span class="type-signature">&lt;inner> </span>getReportBase<span class="signature">(user)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Get the basic report information for the user
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Basic info about the user</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The information about the user
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="promotionAnalysis"><span class="type-signature">&lt;inner> </span>promotionAnalysis<span class="signature">(user)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Get information about the trust level for the user
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>user</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The user to get information about</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The promotion text for that user.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
 
 
 	</dd>
@@ -1194,7 +1278,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Wednesday, April 22nd 2015, 2:46:41 pm using the <a
+		on Wednesday, April 22nd 2015, 2:46:42 pm using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
