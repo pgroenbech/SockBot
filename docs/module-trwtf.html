@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SockBot Module: anonymize</title>
+	<title>SockBot Module: trwtf</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -110,12 +110,12 @@
 					
 
 
-	<h1 class="page-title">Module: anonymize</h1>
+	<h1 class="page-title">Module: trwtf</h1>
 <section>
 
 <header>
     <h2>
-    anonymize
+    trwtf
     </h2>
     
 </header>
@@ -126,7 +126,7 @@
 
     
         
-            <div class="description">Anonymize module. Responsible for allowing anonymous users to "puppet" the bot, making it speak instead of them.</div>
+            <div class="description">TRWTF module. Tells people they are TRWTF</div>
         
 
         
@@ -181,68 +181,31 @@
         <dl>
             
 <dt class="name" id="configuration">
-    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"> :Object</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Configuration properties.
+        Default Configuration settings for this sock_module
     </div>
     
 
     
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
 
     
 <dl class="details">
-	
-
-	<h5 class="subsection-title">Properties:</h5>
-
-	<dl>
-
-<table class="props table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>enabled</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Whether to use anonymizer or not. Defaults to false.</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-</dl>
-
 	
 
 	
@@ -279,17 +242,27 @@
         
             
 <dt class="name" id="description">
-    <h4><span class="type-signature">&lt;static> </span>description<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>description<span class="type-signature"> :String</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Description of the module
+        Brief description of this module for Help Docs
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -330,17 +303,27 @@
         
             
 <dt class="name" id="name">
-    <h4><span class="type-signature">&lt;static> </span>name<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>name<span class="type-signature"> :String</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Name of the module
+        The name of this sock_module
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -381,17 +364,31 @@
         
             
 <dt class="name" id="priority">
-    <h4><span class="type-signature">&lt;static> </span>priority<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>priority<span class="type-signature"> :Number</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Priority of the module
+        If defined by a sock_module it is the priority
+of the module with respect to other modules.
+
+sock_modules **should not** define modules with negative permissions.
+Default value is 50 with lower numbers being higher priority.
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Number</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -432,17 +429,27 @@
         
             
 <dt class="name" id="version">
-    <h4><span class="type-signature">&lt;static> </span>version<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>version<span class="type-signature"> :String</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Module version
+        The version of this sock_module
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">String</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -497,7 +504,7 @@
     
     
     <div class="description">
-        Bootstrap the module.
+        Bootstrap the module
     </div>
     
 
@@ -547,7 +554,7 @@
 
             
 
-            <td class="description last">The browser I guess?</td>
+            <td class="description last">discourse.</td>
         </tr>
 
 	
@@ -570,7 +577,7 @@
 
             
 
-            <td class="description last">The config I guess?</td>
+            <td class="description last">The configuration to use</td>
         </tr>
 
 	
@@ -635,9 +642,7 @@
     
     
     <div class="description">
-        Runs on notification. If the anonymizer is not enabled or there's no quote, 
-it early aborts. Otherwise, it sends a post to the quote's topic containing 
-the text.
+        Runs on notification. If there is a mention of this bot, replies with the canned text.
     </div>
     
 
@@ -687,7 +692,7 @@ the text.
 
             
 
-            <td class="description last">The type of event. Only responds if this is 'private_message'</td>
+            <td class="description last">The type of event. Only responds if this is 'mentioned'</td>
         </tr>
 
 	
@@ -854,7 +859,7 @@ the text.
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Wednesday, April 22nd 2015, 2:19:18 pm using the <a
+		on Wednesday, April 22nd 2015, 2:19:21 pm using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>

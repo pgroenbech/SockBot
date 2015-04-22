@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SockBot Module: anonymize</title>
+	<title>SockBot Module: emoji</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -110,12 +110,12 @@
 					
 
 
-	<h1 class="page-title">Module: anonymize</h1>
+	<h1 class="page-title">Module: emoji</h1>
 <section>
 
 <header>
     <h2>
-    anonymize
+    emoji
     </h2>
     
 </header>
@@ -126,7 +126,7 @@
 
     
         
-            <div class="description">Anonymize module. Responsible for allowing anonymous users to "puppet" the bot, making it speak instead of them.</div>
+            <div class="description">MobileEmoji module. Responsible for automatically replacing emoji with Discourse emoji codes</div>
         
 
         
@@ -235,7 +235,7 @@
 
             
 
-            <td class="description last">Whether to use anonymizer or not. Defaults to false.</td>
+            <td class="description last">Whether to use MobileEmoji or not. Defaults to false.</td>
         </tr>
 
 	
@@ -537,7 +537,7 @@
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -547,7 +547,7 @@
 
             
 
-            <td class="description last">The browser I guess?</td>
+            <td class="description last">The Discourse interface object</td>
         </tr>
 
 	
@@ -570,7 +570,7 @@
 
             
 
-            <td class="description last">The config I guess?</td>
+            <td class="description last">The SockBot config object</td>
         </tr>
 
 	
@@ -627,7 +627,7 @@
         
             
 <dt>
-    <h4 class="name" id="onNotify"><span class="type-signature">&lt;static> </span>onNotify<span class="signature">(type, notification, topic, post, callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="onMessage"><span class="type-signature">&lt;static> </span>onMessage<span class="signature">(message, post, callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -635,9 +635,7 @@
     
     
     <div class="description">
-        Runs on notification. If the anonymizer is not enabled or there's no quote, 
-it early aborts. Otherwise, it sends a post to the quote's topic containing 
-the text.
+        Handle received messages.
     </div>
     
 
@@ -671,13 +669,13 @@ the text.
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -687,53 +685,7 @@ the text.
 
             
 
-            <td class="description last">The type of event. Only responds if this is 'private_message'</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>notification</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The notification to respond to</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>topic</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Unused.</td>
+            <td class="description last">An object representing the message that was received</td>
         </tr>
 
 	
@@ -746,7 +698,7 @@ the text.
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">object</span>
 
 
             
@@ -756,7 +708,7 @@ the text.
 
             
 
-            <td class="description last">The post the notification was for</td>
+            <td class="description last">An object representing the post that the message was about</td>
         </tr>
 
 	
@@ -779,7 +731,122 @@ the text.
 
             
 
-            <td class="description last">The callback to notify when processing is complete.</td>
+            <td class="description last">The callback to use once the action is complete</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="registerListeners"><span class="type-signature">&lt;static> </span>registerListeners<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Register the required listeners.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The callback to use once the action is complete</td>
         </tr>
 
 	
@@ -854,7 +921,7 @@ the text.
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Wednesday, April 22nd 2015, 2:19:18 pm using the <a
+		on Wednesday, April 22nd 2015, 2:19:19 pm using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
