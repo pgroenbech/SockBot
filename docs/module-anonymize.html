@@ -1,103 +1,198 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>JSDoc: Module: anonymize</title>
-    
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+	<meta charset="utf-8">
+	<title>SockBot Module: anonymize</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cosmo.css">
+
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">SockBot</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b
+						class="caret"></b></a>
 
-<div id="main">
-    
-    <h1 class="page-title">Module: anonymize</h1>
-    
-    
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="module-anonymize.html">anonymize</a>
+						</li>
+						
+						<li>
+							<a href="module-dice.html">dice</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="global.html#configuration">configuration</a>
+						</li>
+						
+						<li>
+							<a href="global.html#configuration Default Configuration settings for this
+sock_module">configuration Default Configuration settings for this
+sock_module</a>
+						</li>
+						
+						<li>
+							<a href="global.html#description">description</a>
+						</li>
+						
+						<li>
+							<a href="global.html#description Brief description of this module for Help Docs">description Brief description of this module for Help Docs</a>
+						</li>
+						
+						<li>
+							<a href="global.html#handleMessage">handleMessage</a>
+						</li>
+						
+						<li>
+							<a href="global.html#name">name</a>
+						</li>
+						
+						<li>
+							<a href="global.html#name The name of this sock_module">name The name of this sock_module</a>
+						</li>
+						
+						<li>
+							<a href="global.html#priority">priority</a>
+						</li>
+						
+						<li>
+							<a href="global.html#priority If defined by a sock_module it is the priority
+of the module with respect to other modules.
+
+sock_modules **should not** define modules with negative permissions.
+Default value is 50 with lower numbers being higher priority.">priority If defined by a sock_module it is the priority
+of the module with respect to other modules.
+
+sock_modules **should not** define modules with negative permissions.
+Default value is 50 with lower numbers being higher priority.</a>
+						</li>
+						
+						<li>
+							<a href="global.html#uuid">uuid</a>
+						</li>
+						
+						<li>
+							<a href="global.html#version">version</a>
+						</li>
+						
+						<li>
+							<a href="global.html#version The version of this sock_module">version The version of this sock_module</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
 
 
-
+	<h1 class="page-title">Module: anonymize</h1>
 <section>
-    
+
 <header>
     <h2>
     anonymize
     </h2>
     
-</header>  
+</header>
 
 <article>
     <div class="container-overview">
     
-    
+
     
         
             <div class="description">Anonymize module. Responsible for allowing anonymous users to "puppet" the bot, making it speak instead of them.</div>
         
-        
+
         
 <dl class="details">
-    
-        
-    
-    
-    
+	
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="anonymize.js.html">sock_modules/anonymize.js</a>, <a href="anonymize.js.html#line2">line 2</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
-        
+
         
     
     </div>
+
     
+
     
+
     
+
     
+
     
-    
-    
-    
-    
-    
-    
+
     
         <h3 class="subsection-title">Members</h3>
-        
+
         <dl>
             
-<dt>
-    <h4 class="name" id="configuration"><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"></span></h4>
-    
+<dt class="name" id="configuration">
+    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"></span></h4>
+
     
 </dt>
 <dd>
@@ -106,98 +201,96 @@
         Configuration properties.
     </div>
     
-    
+
     
 
     
 <dl class="details">
-    
-        
-        <h5 class="subsection-title">Properties:</h5>
-        
-        <dl>
+	
 
-<table class="props">
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
     <thead>
 	<tr>
 		
 		<th>Name</th>
 		
-		
+
 		<th>Type</th>
+
 		
+
 		
-		
-		
-		
+
 		<th class="last">Description</th>
 	</tr>
 	</thead>
-	
+
 	<tbody>
 	
-	
+
         <tr>
             
                 <td class="name"><code>enabled</code></td>
             
-            
+
             <td class="type">
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">Whether to use anonymizer or not. Defaults to false.</td>
         </tr>
-	
+
 	
 	</tbody>
-</table></dl>
-        
-    
-        
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="anonymize.js.html">sock_modules/anonymize.js</a>, <a href="anonymize.js.html#line20">line 20</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
+</table>
 </dl>
 
-    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
     
 </dd>
 
         
             
-<dt>
-    <h4 class="name" id="description"><span class="type-signature">&lt;static> </span>description<span class="type-signature"></span></h4>
-    
+<dt class="name" id="description">
+    <h4><span class="type-signature">&lt;static> </span>description<span class="type-signature"></span></h4>
+
     
 </dt>
 <dd>
@@ -206,52 +299,49 @@
         Description of the module
     </div>
     
-    
+
     
 
     
 <dl class="details">
-    
-        
-    
-    
-    
+	
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="anonymize.js.html">sock_modules/anonymize.js</a>, <a href="anonymize.js.html#line14">line 14</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
-    
+
     
 </dd>
 
         
             
-<dt>
-    <h4 class="name" id="name"><span class="type-signature">&lt;static> </span>name<span class="type-signature"></span></h4>
-    
+<dt class="name" id="name">
+    <h4><span class="type-signature">&lt;static> </span>name<span class="type-signature"></span></h4>
+
     
 </dt>
 <dd>
@@ -260,52 +350,49 @@
         Name of the module
     </div>
     
-    
+
     
 
     
 <dl class="details">
-    
-        
-    
-    
-    
+	
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="anonymize.js.html">sock_modules/anonymize.js</a>, <a href="anonymize.js.html#line25">line 25</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
-    
+
     
 </dd>
 
         
             
-<dt>
-    <h4 class="name" id="priority"><span class="type-signature">&lt;static> </span>priority<span class="type-signature"></span></h4>
-    
+<dt class="name" id="priority">
+    <h4><span class="type-signature">&lt;static> </span>priority<span class="type-signature"></span></h4>
+
     
 </dt>
 <dd>
@@ -314,52 +401,49 @@
         Priority of the module
     </div>
     
-    
+
     
 
     
 <dl class="details">
-    
-        
-    
-    
-    
+	
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="anonymize.js.html">sock_modules/anonymize.js</a>, <a href="anonymize.js.html#line28">line 28</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
-    
+
     
 </dd>
 
         
             
-<dt>
-    <h4 class="name" id="version"><span class="type-signature">&lt;static> </span>version<span class="type-signature"></span></h4>
-    
+<dt class="name" id="version">
+    <h4><span class="type-signature">&lt;static> </span>version<span class="type-signature"></span></h4>
+
     
 </dt>
 <dd>
@@ -368,57 +452,54 @@
         Module version
     </div>
     
-    
+
     
 
     
 <dl class="details">
-    
-        
-    
-    
-    
+	
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="anonymize.js.html">sock_modules/anonymize.js</a>, <a href="anonymize.js.html#line31">line 31</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
-    
+
     
 </dd>
 
         </dl>
     
-    
+
     
         <h3 class="subsection-title">Methods</h3>
-        
+
         <dl>
             
 <dt>
-    <h4 class="name" id="begin"><span class="type-signature">&lt;static> </span>begin<span class="signature">(browser)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="begin"><span class="type-signature">&lt;static> </span>begin<span class="signature">(browser, config)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -438,31 +519,31 @@
         <h5>Parameters:</h5>
         
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
 	<tr>
 		
 		<th>Name</th>
 		
-		
+
 		<th>Type</th>
+
 		
+
 		
-		
-		
-		
+
 		<th class="last">Description</th>
 	</tr>
 	</thead>
-	
+
 	<tbody>
 	
-	
+
         <tr>
             
                 <td class="name"><code>browser</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -471,51 +552,72 @@
 
             
             </td>
+
             
+
             
-            
-            
-            
-            <td class="description last">-</td>
+
+            <td class="description last">The browser I guess?</td>
         </tr>
+
 	
+
+        <tr>
+            
+                <td class="name"><code>config</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The config I guess?</td>
+        </tr>
+
 	
 	</tbody>
 </table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="anonymize.js.html">sock_modules/anonymize.js</a>, <a href="anonymize.js.html#line37">line 37</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
     
@@ -557,31 +659,31 @@ the text.
         <h5>Parameters:</h5>
         
 
-<table class="params">
+<table class="params table table-striped">
     <thead>
 	<tr>
 		
 		<th>Name</th>
 		
-		
+
 		<th>Type</th>
+
 		
+
 		
-		
-		
-		
+
 		<th class="last">Description</th>
 	</tr>
 	</thead>
-	
+
 	<tbody>
 	
-	
+
         <tr>
             
                 <td class="name"><code>type</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -590,21 +692,21 @@ the text.
 
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">The type of event. Only responds if this is 'private_message'</td>
         </tr>
+
 	
-	
-	
+
         <tr>
             
                 <td class="name"><code>notification</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -613,21 +715,21 @@ the text.
 
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">The notification to respond to</td>
         </tr>
+
 	
-	
-	
+
         <tr>
             
                 <td class="name"><code>topic</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -636,21 +738,21 @@ the text.
 
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">Unused.</td>
         </tr>
+
 	
-	
-	
+
         <tr>
             
                 <td class="name"><code>post</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -659,21 +761,21 @@ the text.
 
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">The post the notification was for</td>
         </tr>
+
 	
-	
-	
+
         <tr>
             
                 <td class="name"><code>callback</code></td>
             
-            
+
             <td class="type">
             
                 
@@ -682,51 +784,49 @@ the text.
 
             
             </td>
+
             
+
             
-            
-            
-            
+
             <td class="description last">The callback to notify when processing is complete.</td>
         </tr>
-	
+
 	
 	</tbody>
 </table>
-    
-    
-    
-<dl class="details">
-    
-        
-    
-    
-    
 
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="anonymize.js.html">sock_modules/anonymize.js</a>, <a href="anonymize.js.html#line52">line 52</a>
-    </li></ul></dd>
-    
-    
-    
-    
-    
-    
-    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
 </dl>
 
     
@@ -745,48 +845,143 @@ the text.
 
         </dl>
     
+
     
-    
-    
+
     
 </article>
 
-</section>  
+</section>
 
 
 
 
-</div>
+				</div>
 
-<nav>
-    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-anonymize.html">anonymize</a></li><li><a href="module-dice.html">dice</a></li><li><a href="module-discourse.html">discourse</a></li></ul><h3>Global</h3><ul><li><a href="global.html#configuration Default Configuration settings for this
-sock_module">configuration Default Configuration settings for this
-sock_module</a></li><li><a href="global.html#description Brief description of this module for Help Docs">description Brief description of this module for Help Docs</a></li><li><a href="global.html#handleMessage">handleMessage</a></li><li><a href="global.html#name The name of this sock_module">name The name of this sock_module</a></li><li><a href="global.html#priority If defined by a sock_module it is the priority
-of the module with respect to other modules.
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on Wednesday, April 22nd 2015, 12:31:20 pm using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
 
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.">priority If defined by a sock_module it is the priority
-of the module with respect to other modules.
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
 
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.</a></li><li><a href="global.html#priority If defined by a sock_module it is the priority of
-the module with respect to other modules.
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
 
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.">priority If defined by a sock_module it is the priority of
-the module with respect to other modules.
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
 
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.</a></li><li><a href="global.html#version The version of this sock_module">version The version of this sock_module</a></li></ul>
-</nav>
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
 
-<br clear="both">
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
 
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed Apr 22 2015 00:59:06 GMT-0000 (UTC)
-</footer>
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
 
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : true,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+	<script>
+		$( function () {
+			$( '#main' ).localScroll( {
+				offset : { top : 60 } //offset by the height of your header (give or take a few px, see what works for you)
+			} );
+			$( "dt.name" ).each( function () {
+				var $this = $( this ).find("h4");
+				var icon = $( "<i/>" ).addClass( "icon-plus-sign" ).addClass( "pull-right" ).addClass( "icon-white" );
+				var dt = $(this);
+				var children = dt.next( "dd" );
+
+				dt.prepend( icon ).css( {cursor : "pointer"} );
+				dt.addClass( "member-collapsed" ).addClass( "member" );
+
+
+				children.hide();
+
+				dt.children().on( "click", function () {
+					children = dt.next( "dd" );
+					console.debug(dt, children)
+					children.slideToggle( "fast", function () {
+
+						if ( children.is( ":visible" ) ) {
+							icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" );
+							dt.addClass( "member-open" ).animate( "member-collapsed" );
+						} else {
+							icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" );
+							dt.addClass( "member-collapsed" ).removeClass( "member-open" );
+						}
+					} );
+				} );
+
+			} );
+		} );
+	</script>
+	
+
+
+	<!--Google Analytics-->
+	
+
 </body>
 </html>
