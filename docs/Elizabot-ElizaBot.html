@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SockBot Module: spellar</title>
+	<title>SockBot Class: ElizaBot</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -156,12 +156,14 @@
 					
 
 
-	<h1 class="page-title">Module: spellar</h1>
+	<h1 class="page-title">Class: ElizaBot</h1>
 <section>
 
 <header>
     <h2>
-    spellar
+        <span class="ancestors"><a href="Elizabot.html">.Elizabot</a>~</span>
+    
+    ElizaBot
     </h2>
     
 </header>
@@ -172,83 +174,28 @@
 
     
         
-            <div class="description">Spellar module. Responsible for automatically correcting spelling errors</div>
-        
-
-        
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
+<dt>
+    <h4 class="name" id="ElizaBot"><span class="type-signature"></span>new ElizaBot<span class="signature">(datapath, noRandomFlag)</span><span class="type-signature"></span></h4>
     
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Members</h3>
-
-        <dl>
-            
-<dt class="name" id="configuration">
-    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"></span></h4>
-
     
 </dt>
 <dd>
     
+    
     <div class="description">
-        Configuration properties.
+        The logic class behind the Eliza module
     </div>
     
 
     
-
     
-<dl class="details">
-	
+    
+    
+    
+        <h5>Parameters:</h5>
+        
 
-	<h5 class="subsection-title">Properties:</h5>
-
-	<dl>
-
-<table class="props table table-striped">
+<table class="params table table-striped">
     <thead>
 	<tr>
 		
@@ -270,10 +217,15 @@
 
         <tr>
             
-                <td class="name"><code>enabled</code></td>
+                <td class="name"><code>datapath</code></td>
             
 
             <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
             
             </td>
 
@@ -281,17 +233,22 @@
 
             
 
-            <td class="description last">Whether to use Spellar or not. Defaults to false.</td>
+            <td class="description last">The path to Elizabot's data</td>
         </tr>
 
 	
 
         <tr>
             
-                <td class="name"><code>checkOwnPosts</code></td>
+                <td class="name"><code>noRandomFlag</code></td>
             
 
             <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
             
             </td>
 
@@ -299,135 +256,15 @@
 
             
 
-            <td class="description last">Whether to use check the user's own posts or not. Defaults to false.</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>baseDictLocation</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The directory containing the base dictionary. Defaults to dictionaries.</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>baseDictLocation</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The name of the base dictionary. Defaults to en_US.</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>baseDictLocation</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The directory containing extra dictionaries. Defaults to dictionaries.</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>baseDictLocation</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An array of names of extra dictionaries. Defaults to an empty array.</td>
+            <td class="description last">True if you don't want to be random. False if not.</td>
         </tr>
 
 	
 	</tbody>
 </table>
-</dl>
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
 
     
-</dd>
-
-        
-            
-<dt class="name" id="description">
-    <h4><span class="type-signature">&lt;static> </span>description<span class="type-signature"></span></h4>
-
     
-</dt>
-<dd>
-    
-    <div class="description">
-        Description of the module
-    </div>
-    
-
-    
-
     
 <dl class="details">
 	
@@ -459,126 +296,60 @@
 	
 </dl>
 
+    
+    
 
+    
+
+    
+    
+    
+    
+    
+    
     
 </dd>
 
-        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
             
-<dt class="name" id="name">
-    <h4><span class="type-signature">&lt;static> </span>name<span class="type-signature"></span></h4>
+<dt class="name" id="_dataParsed">
+    <h4><span class="type-signature"></span>_dataParsed<span class="type-signature"> :Boolean</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Name of the module
+        Whether the data files have been parsed yet.
     </div>
     
 
     
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Boolean</span>
 
 
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="priority">
-    <h4><span class="type-signature">&lt;static> </span>priority<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Priority of the module
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<dt class="name" id="version">
-    <h4><span class="type-signature">&lt;static> </span>version<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Module version
-    </div>
-    
-
+            </li>
+        </ul>
     
 
     
@@ -625,7 +396,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="begin"><span class="type-signature">&lt;static> </span>begin<span class="signature">(browser, config)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="_execRule"><span class="type-signature"></span>_execRule<span class="signature">(k)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
     
 </dt>
@@ -633,7 +404,7 @@
     
     
     <div class="description">
-        Bootstrap the module.
+        Execute a rule
     </div>
     
 
@@ -667,13 +438,13 @@
 
         <tr>
             
-                <td class="name"><code>browser</code></td>
+                <td class="name"><code>k</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">Number</span>
 
 
             
@@ -683,20 +454,135 @@
 
             
 
-            <td class="description last">The Discourse interface object</td>
+            <td class="description last">The rule to execute</td>
         </tr>
 
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The reply for that rule
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="_getRuleIndexByKey"><span class="type-signature"></span>_getRuleIndexByKey<span class="signature">(key)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Find the index of a rule from the key. Converts from object lookup to array lookup.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
 	
 
         <tr>
             
-                <td class="name"><code>config</code></td>
+                <td class="name"><code>key</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">String</span>
 
 
             
@@ -706,7 +592,300 @@
 
             
 
-            <td class="description last">The SockBot config object</td>
+            <td class="description last">the key</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The index
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Number</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="_init"><span class="type-signature"></span>_init<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Initialize the bot
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="_memGet"><span class="type-signature"></span>_memGet<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Get from memory
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    the item
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="_memSave"><span class="type-signature"></span>_memSave<span class="signature">(t)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Save into memory
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>t</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The item to save</td>
         </tr>
 
 	
@@ -763,7 +942,7 @@
         
             
 <dt>
-    <h4 class="name" id="onMessage"><span class="type-signature">&lt;static> </span>onMessage<span class="signature">(message, post, callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="_postTransform"><span class="type-signature"></span>_postTransform<span class="signature">(s)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
     
 </dt>
@@ -771,7 +950,7 @@
     
     
     <div class="description">
-        Handle received messages.
+        Clean up after transforming.
     </div>
     
 
@@ -805,13 +984,13 @@
 
         <tr>
             
-                <td class="name"><code>message</code></td>
+                <td class="name"><code>s</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">String</span>
 
 
             
@@ -821,53 +1000,7 @@
 
             
 
-            <td class="description last">An object representing the message that was received</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>post</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">An object representing the post that the message was about</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The callback to use once the action is complete</td>
+            <td class="description last">I think the reply stream?</td>
         </tr>
 
 	
@@ -917,6 +1050,29 @@
     
     
     
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    s but more transformy
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+
+        
     
     
 </dd>
@@ -924,7 +1080,7 @@
         
             
 <dt>
-    <h4 class="name" id="registerListeners"><span class="type-signature">&lt;static> </span>registerListeners<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="_sortKeywords"><span class="type-signature"></span>_sortKeywords<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {Number}</span></h4>
     
     
 </dt>
@@ -932,7 +1088,7 @@
     
     
     <div class="description">
-        Register the required listeners.
+        Sort keywords by rank or original index (tiebreaker)
     </div>
     
 
@@ -966,13 +1122,13 @@
 
         <tr>
             
-                <td class="name"><code>callback</code></td>
+                <td class="name"><code>a</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">function</span>
+<span class="param-type">Object</span>
 
 
             
@@ -982,7 +1138,30 @@
 
             
 
-            <td class="description last">The callback to use once the action is complete</td>
+            <td class="description last">Keyword 1</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Keyword 2</td>
         </tr>
 
 	
@@ -1032,6 +1211,29 @@
     
     
     
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    As per sorting algorithm
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Number</span>
+
+
+	</dd>
+</dl>
+
+
+        
     
     
 </dd>
@@ -1039,7 +1241,7 @@
         
             
 <dt>
-    <h4 class="name" id="initialiseDictionary"><span class="type-signature">&lt;inner> </span>initialiseDictionary<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="getFinal"><span class="type-signature"></span>getFinal<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
     
     
 </dt>
@@ -1047,7 +1249,185 @@
     
     
     <div class="description">
-        Initialise the dictionary.
+        Get a random signoff used when ending a conversation
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The signoff
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getInitial"><span class="type-signature"></span>getInitial<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Get a greeting used when starting a conversation
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The greeting
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="reset"><span class="type-signature"></span>reset<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Reset Elizabot, making her forget what she's already said.
     </div>
     
 
@@ -1105,7 +1485,7 @@
         
             
 <dt>
-    <h4 class="name" id="loadAddtitionalDictionaries"><span class="type-signature">&lt;inner> </span>loadAddtitionalDictionaries<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="transform"><span class="type-signature"></span>transform<span class="signature">(text)</span><span class="type-signature"> &rarr; {String}</span></h4>
     
     
 </dt>
@@ -1113,73 +1493,7 @@
     
     
     <div class="description">
-        Load additional dictionaries, if provided.
-    </div>
-    
-
-    
-    
-    
-    
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="spellCheckPost"><span class="type-signature">&lt;inner> </span>spellCheckPost<span class="signature">(post, callback)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Spell-check the post, sending an edit if anything has been changed
+        This would appear to be the main function that takes in a sentence and comes up with a reply
     </div>
     
 
@@ -1213,13 +1527,13 @@
 
         <tr>
             
-                <td class="name"><code>post</code></td>
+                <td class="name"><code>text</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">String</span>
 
 
             
@@ -1229,30 +1543,7 @@
 
             
 
-            <td class="description last">An object representing the post</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The callback to use once the action is complete</td>
+            <td class="description last">The input</td>
         </tr>
 
 	
@@ -1302,6 +1593,29 @@
     
     
     
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The reply from Eliza
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+
+        
     
     
 </dd>
@@ -1327,7 +1641,7 @@
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Thursday, April 23rd 2015, 5:23:31 pm using the <a
+		on Thursday, April 23rd 2015, 5:23:27 pm using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>

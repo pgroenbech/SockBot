@@ -48,6 +48,10 @@
 						</li>
 						
 						<li>
+							<a href="module-eliza.html">eliza</a>
+						</li>
+						
+						<li>
 							<a href="module-emoji.html">emoji</a>
 						</li>
 						
@@ -88,29 +92,51 @@
 				</li>
 				
 				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="Elizabot-ElizaBot.html">eliza.Elizabot~ElizaBot</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
 					<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b
 						class="caret"></b></a>
 
 					<ul class="dropdown-menu ">
 						
 						<li>
-							<a href="global.html#configuration">configuration</a>
+							<a href="global.html#Finals">Finals</a>
 						</li>
 						
 						<li>
-							<a href="global.html#description">description</a>
+							<a href="global.html#Initials">Initials</a>
 						</li>
 						
 						<li>
-							<a href="global.html#name">name</a>
+							<a href="global.html#Posts">Posts</a>
 						</li>
 						
 						<li>
-							<a href="global.html#priority">priority</a>
+							<a href="global.html#PostTransforms">PostTransforms</a>
 						</li>
 						
 						<li>
-							<a href="global.html#version">version</a>
+							<a href="global.html#Pres">Pres</a>
+						</li>
+						
+						<li>
+							<a href="global.html#Quits">Quits</a>
+						</li>
+						
+						<li>
+							<a href="global.html#Synons">Synons</a>
 						</li>
 						
 
@@ -198,18 +224,28 @@
 
         <dl>
             
-<dt class="name" id="configuration">
-    <h4><span class="type-signature"></span>configuration<span class="type-signature"></span></h4>
+<dt class="name" id="Finals">
+    <h4><span class="type-signature"></span>Finals<span class="type-signature"> :Array</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Default Configuration settings for this sock_module
+        Final sentences used when ending a conversation
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -249,18 +285,28 @@
 
         
             
-<dt class="name" id="description">
-    <h4><span class="type-signature"></span>description<span class="type-signature"></span></h4>
+<dt class="name" id="Initials">
+    <h4><span class="type-signature"></span>Initials<span class="type-signature"> :Array</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Brief description of this module for Help Docs
+        Initial sentences used when starting a conversation
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -300,18 +346,28 @@
 
         
             
-<dt class="name" id="name">
-    <h4><span class="type-signature"></span>name<span class="type-signature"></span></h4>
+<dt class="name" id="Posts">
+    <h4><span class="type-signature"></span>Posts<span class="type-signature"> :Array</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        The name of this sock_module
+        Post-fixes?
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -351,22 +407,29 @@
 
         
             
-<dt class="name" id="priority">
-    <h4><span class="type-signature"></span>priority<span class="type-signature"></span></h4>
+<dt class="name" id="PostTransforms">
+    <h4><span class="type-signature"></span>PostTransforms<span class="type-signature"> :Array</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        If defined by a sock_module it is the priority
-of the module with respect to other modules.
-
-sock_modules **should not** define modules with negative permissions.
-Default value is 50 with lower numbers being higher priority.
+        regexp/replacement pairs to be performed as final cleanings
+here: cleanings for multiple bots talking to each other
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -406,18 +469,150 @@ Default value is 50 with lower numbers being higher priority.
 
         
             
-<dt class="name" id="version">
-    <h4><span class="type-signature"></span>version<span class="type-signature"></span></h4>
+<dt class="name" id="Pres">
+    <h4><span class="type-signature"></span>Pres<span class="type-signature"> :Array</span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        The version of this sock_module
+        Prefixes?
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="Quits">
+    <h4><span class="type-signature"></span>Quits<span class="type-signature"> :Array</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Things to say when exiting.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="Synons">
+    <h4><span class="type-signature"></span>Synons<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Synonyms to add variance to the sentences to make them less canned.
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -478,7 +673,7 @@ Default value is 50 with lower numbers being higher priority.
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Thursday, April 23rd 2015, 4:39:18 pm using the <a
+		on Thursday, April 23rd 2015, 5:23:26 pm using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
