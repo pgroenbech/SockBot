@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>SockBot Module: dice</title>
+	<title>SockBot Module: likes</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -130,12 +130,12 @@
 					
 
 
-	<h1 class="page-title">Module: dice</h1>
+	<h1 class="page-title">Module: likes</h1>
 <section>
 
 <header>
     <h2>
-    dice
+    likes
     </h2>
     
 </header>
@@ -146,7 +146,7 @@
 
     
         
-            <div class="description">Dice module. Responsible for rolling dice in PMs.</div>
+            <div class="description">Likes module. The  autoliker</div>
         
 
         
@@ -201,7 +201,7 @@
         <dl>
             
 <dt class="name" id="configuration">
-    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"></span></h4>
+    <h4><span class="type-signature">&lt;static> </span>configuration<span class="type-signature"> :Object</span></h4>
 
     
 </dt>
@@ -212,6 +212,16 @@
     </div>
     
 
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
     
 
     
@@ -361,8 +371,8 @@
 <dd>
     
     <div class="description">
-        If defined by a sock_module it is the priority of
-the module with respect to other modules.
+        If defined by a sock_module it is the priority
+of the module with respect to other modules.
 
 sock_modules **should not** define modules with negative permissions.
 Default value is 50 with lower numbers being higher priority.
@@ -604,7 +614,7 @@ Default value is 50 with lower numbers being higher priority.
         
             
 <dt>
-    <h4 class="name" id="onNotify"><span class="type-signature">&lt;static> </span>onNotify<span class="signature">(type, notification, topic, post, callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="onMessage"><span class="type-signature">&lt;static> </span>onMessage<span class="signature">(message, post, callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -612,8 +622,8 @@ Default value is 50 with lower numbers being higher priority.
     
     
     <div class="description">
-        Runs on notification. If the dice module is not enabled or is not triggered via PM, 
-it early aborts. Otherwise, it tries to respond with the result of the dice roll.
+        Handler for when a message is received. If it is a new post creation message in the correct thread, 
+the module will like it.
     </div>
     
 
@@ -647,13 +657,13 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
 
         <tr>
             
-                <td class="name"><code>type</code></td>
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">Object</span>
 
 
             
@@ -663,53 +673,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
 
             
 
-            <td class="description last">The type of event. Only responds if this is 'private_message'</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>notification</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The notification to respond to</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>topic</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Unused. PM-only.</td>
+            <td class="description last">The message that was received</td>
         </tr>
 
 	
@@ -722,7 +686,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type">Object</span>
 
 
             
@@ -732,7 +696,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
 
             
 
-            <td class="description last">The post the notification was for</td>
+            <td class="description last">The post information for that message</td>
         </tr>
 
 	
@@ -755,7 +719,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
 
             
 
-            <td class="description last">The callback to notify when processing is complete.</td>
+            <td class="description last">The callback to call when done</td>
         </tr>
 
 	
@@ -812,7 +776,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
         
             
 <dt>
-    <h4 class="name" id="getError"><span class="type-signature">&lt;inner> </span>getError<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="registerListeners"><span class="type-signature">&lt;static> </span>registerListeners<span class="signature">(callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -820,7 +784,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
     
     
     <div class="description">
-        Get a random error message. Adds quirkiness to the bot.
+        Register listeners that do the following if we are in follow mode
     </div>
     
 
@@ -828,6 +792,308 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
     
     
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the callback to call when complete</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="binge"><span class="type-signature">&lt;inner> </span>binge<span class="signature">(callback)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Wrapper that standardizes parameters for innerBinge. Will binge on either one topic or many.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The callback to call when done binging</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="format"><span class="type-signature">&lt;inner> </span>format<span class="signature">(str, dict)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Replaces variables in formatting strings, kind of like printf
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The string to format</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>dict</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The variables to format into the string</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
     
     
     
@@ -875,7 +1141,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
     
             
 <div class="param-desc">
-    The error string.
+    the message after replacement
 </div>
 
 
@@ -886,7 +1152,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
 	</dt>
 	<dd>
 		
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
 	</dd>
@@ -901,7 +1167,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
         
             
 <dt>
-    <h4 class="name" id="prerollDice"><span class="type-signature">&lt;inner> </span>prerollDice<span class="signature">(num, sides)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id="innerBinge"><span class="type-signature">&lt;inner> </span>innerBinge<span class="signature">(topic, callback)</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -909,7 +1175,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
     
     
     <div class="description">
-        Pre-roll dice. To get bad streaks out early :)
+        Perform a binge-liking.
     </div>
     
 
@@ -943,13 +1209,13 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
 
         <tr>
             
-                <td class="name"><code>num</code></td>
+                <td class="name"><code>topic</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">Number</span>
 
 
             
@@ -959,168 +1225,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
 
             
 
-            <td class="description last">The number of dice to roll</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>sides</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The size of dice to roll</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    How many dice were rolled
-</div>
-
-
-
-<dl>
-	<dt>
-		Type
-	</dt>
-	<dd>
-		
-<span class="param-type">number</span>
-
-
-	</dd>
-</dl>
-
-
-        
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="rollAllDice"><span class="type-signature">&lt;inner> </span>rollAllDice<span class="signature">(input, callback)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Roll as many dice as can be parsed.
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>input</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The input string to parse</td>
+            <td class="description last">The topic number to binge-like on</td>
         </tr>
 
 	
@@ -1143,7 +1248,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
 
             
 
-            <td class="description last">The callback to call when complete</td>
+            <td class="description last">the callback to call when done binging</td>
         </tr>
 
 	
@@ -1200,7 +1305,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
         
             
 <dt>
-    <h4 class="name" id="rollDice"><span class="type-signature">&lt;inner> </span>rollDice<span class="signature">(match, callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="scheduleBinges"><span class="type-signature">&lt;inner> </span>scheduleBinges<span class="signature">()</span><span class="type-signature"></span></h4>
     
     
 </dt>
@@ -1208,7 +1313,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
     
     
     <div class="description">
-        Determine what dice to roll and outsource the logic
+        Schedule new binges according to configuration
     </div>
     
 
@@ -1216,757 +1321,6 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
     
     
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>match</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Information about how to roll
-                <h6>Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>method</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">What method to use to roll dice</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-            </td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The callback to call when complete.</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="rollFudgeDice"><span class="type-signature">&lt;inner> </span>rollFudgeDice<span class="signature">(match, callback)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Roll Fudge dice
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>match</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Information about how to match
-                <h6>Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>num</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">How many dice to roll. Defaults to four</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-            </td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The callback to call when complete</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="rollWolfDice"><span class="type-signature">&lt;inner> </span>rollWolfDice<span class="signature">(match, callback)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Roll White Wolf-style dice
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>match</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Information about how to match
-                <h6>Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>reroll</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Whether to reroll 10s (exploding dice)</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>num</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">How many dice to roll. Defaults to ten.</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>target</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The target number for the roll</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-            </td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The callback to call when complete</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-    
-    
-    
-<dl class="details">
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-    
-    
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="rollXDice"><span class="type-signature">&lt;inner> </span>rollXDice<span class="signature">(match, callback)</span><span class="type-signature"></span></h4>
-    
-    
-</dt>
-<dd>
-    
-    
-    <div class="description">
-        Roll arbitrary d20-style dice
-    </div>
-    
-
-    
-    
-    
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>match</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">Information about how to match
-                <h6>Properties</h6>
-                
-
-<table class="params table table-striped">
-    <thead>
-	<tr>
-		
-		<th>Name</th>
-		
-
-		<th>Type</th>
-
-		
-
-		
-
-		<th class="last">Description</th>
-	</tr>
-	</thead>
-
-	<tbody>
-	
-
-        <tr>
-            
-                <td class="name"><code>sides</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">What size dice to roll</td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>num</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">How many dice to roll</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
-            </td>
-        </tr>
-
-	
-
-        <tr>
-            
-                <td class="name"><code>callback</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The callback to call when complete</td>
-        </tr>
-
-	
-	</tbody>
-</table>
-
     
     
     
@@ -2035,7 +1389,7 @@ it early aborts. Otherwise, it tries to respond with the result of the dice roll
 					
 		<span class="jsdoc-message">
 		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
-		on Thursday, April 23rd 2015, 4:39:20 pm using the <a
+		on Thursday, April 23rd 2015, 4:39:22 pm using the <a
 			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
 		</span>
 				</footer>
